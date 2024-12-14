@@ -1,0 +1,84 @@
+
+/* Swiper
+----------------------------------*/
+.homepage .gallery {
+	width: 100%;
+	position: relative;
+	padding: 0 100px;
+}
+.homepage .sp .gallery {
+	padding: 0 80px;
+}
+
+.homepage .swiper {
+	width: 100%;
+}
+.homepage .sp .swiper {
+	width: 100%;
+}
+
+.homepage .swiper-slide {
+}
+
+.homepage .swiper-slide img {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 800 / 600;
+	object-fit: cover;
+}
+
+.homepage .swiper-pagination {
+	display: flex;
+	justify-content: center;
+	gap: 0 6px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	bottom: -100px;
+
+}
+
+.homepage .swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	opacity: 1;
+	background-color: #D9D9D9;
+}
+
+.homepage .swiper-pagination-bullet-active {
+	background-color: #EE7601;
+}
+
+
+.click{
+	cursor:pointer;
+	margin-top:10px;
+	padding:10px;
+  }
+  
+  .click i{
+	   color: #b7acac;
+	  font-size: 12px;
+	  margin-top: 5px;
+  }
+  
+  .content{
+	display:none
+  }
+  
+  .rotate {
+	  transform: rotate(-180deg);
+	  /*transform: rotate(180deg);*/
+	  transition: .3s;
+  }
+  .rotate-reset {
+	  transform: rotate(0deg);
+	  transition: .3s;
+  }
+  
+  
+  p i{
+	float:right
+  }

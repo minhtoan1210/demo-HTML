@@ -1,0 +1,153 @@
+@import url("../assets/font/GillSans/stylesheet.css");
+@import url("../js/library/swiper/swiper-bundle.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Gill Sans';
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-weight: 500;
+  -webkit-tap-highlight-color: transparent;
+  color: $color-text;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  @include transition(0.3s);
+
+  @include min(1200px) {
+    &:hover {
+      color: rgba($color: $color-pri, $alpha: 1);
+    }
+  }
+}
+
+button,
+select,
+input,
+textarea {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-family: 'Gill Sans';
+  color: black;
+  background: transparent;
+
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+}
+
+.main {
+  min-height: 60vh;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+  background-color: #fef8ea !important;
+  color: rgba(46, 50, 55, 0.5) !important;
+
+  -webkit-box-shadow: 0 0 0 1000px #fef8ea inset !important;
+  -webkit-text-fill-color: rgba(46, 50, 55, 0.5) !important;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 128rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @include max(800px) {
+    padding: 0 0.8rem;
+  }
+}
+
+.over {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.no-scroll {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+iframe {
+  vertical-align: middle;
+}
+
+.effectShine {
+  position: relative;
+  overflow: hidden;
+}
+
+.effectShine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+
+.wow {
+  animation-duration: 1s;
+}
+
+.load-item {
+  display: none;
+}
+
+.show-hide-toggle {
+  cursor: pointer;
+}

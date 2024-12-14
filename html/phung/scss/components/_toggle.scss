@@ -1,0 +1,162 @@
+.toggle {
+    &-header {
+        width: 3.2rem;
+        height: 3.2rem;
+        transition: all 0.3s ease-in-out;
+
+        @include min(1202px) {
+            display: none;
+        }
+
+        .toggle-inner {
+            perspective: 600px;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &.active {
+            .toggle-inner {
+                // transform: scale(0.8);
+            }
+
+            .toggle-item {
+                &:first-child {
+                    --rotateY: -180deg;
+                }
+
+                &:last-child {
+                    --rotateY: 0deg;
+                }
+            }
+        }
+    }
+
+    &-item {
+        --rotateY: 0deg;
+        transform: rotateY(var(--rotateY));
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-pri;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transition: transform 0.6s cubic-bezier(0.2, 0.64, 0.48, 1.24);
+        @include mid-flex;
+
+        img {
+            width: 2rem;
+            height: 2rem;
+            --rotate: 0deg;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(var(--rotate)) translateZ(6px);
+        }
+
+        &:first-child {
+            background: $color-second;
+        }
+
+        &:last-child {
+            background: $color-second;
+            --rotateY: 180deg
+        }
+    }
+
+    &-text {
+        font-weight: 600;
+        color: white;
+        @include flex;
+        align-items: center;
+        margin-left: 0.8rem;
+
+        .icon {
+            margin-left: 0.3rem;
+            width: 2rem;
+            height: 2rem;
+            @include mid-flex;
+            font-size: 1.4rem;
+
+            i {
+                font-weight: 400;
+            }
+        }
+
+
+        @include max(1201px) {
+            display: none;
+        }
+    }
+
+    &-collapse {
+        position: absolute;
+        width: 6rem;
+        height: 6rem;
+        right: 0;
+        bottom: 0;
+        transform: translate(50%, 20%);
+        box-shadow: 4px 0.4rem 4rem rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+        overflow: hidden;
+
+        @include max(1201px) {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+
+        .toggle-item {
+            border-radius: 50%;
+            background: white;
+            color: $color-pri;
+        }
+
+        .toggle-inner {
+            perspective: 600px;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &.active {
+            .toggle-inner {
+                // transform: scale(0.8);
+            }
+
+            .toggle-item {
+                &:first-child {
+                    --rotateY: -180deg;
+                }
+
+                &:last-child {
+                    --rotateY: 0deg;
+                }
+            }
+        }
+    }
+}
+
+.show-hide-toggle {
+    @include flex;
+    color: $color-pri;
+    align-items: center;
+
+    .icon-dr {
+        width: 1.2rem;
+        height: 1.2rem;
+        @include mid-flex;
+        margin-left: 0.6rem;
+    }
+}

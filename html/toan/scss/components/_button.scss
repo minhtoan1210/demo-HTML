@@ -1,0 +1,232 @@
+.btn {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  background: $color-pri;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.8s, color 0.3s 0.3s, transform 0.3s;
+  display: block;
+  user-select: none;
+  color: white;
+  flex-shrink: 0;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    @include mid-flex;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    @include max(600px) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .text {
+    z-index: 4;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &-inner {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    padding: 0 36px;
+    height: 52px;
+    @include fz-16;
+    line-height: 1;
+    overflow: hidden;
+    @include mid-flex;
+    font-weight: 500;
+    white-space: nowrap;
+    text-transform: uppercase;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    gap: 10px;
+
+    @include max(1200px) {
+      height: 40px;
+      padding: 0 20px;
+    }
+
+    @include max(400px) {
+      padding: 1rem 1.6rem 0.9rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    &:hover {
+      color: white;
+      box-shadow: 16rem 0 0 0 $color-second inset,
+        -16rem 0 0 0 $color-second inset;
+      // box-shadow: 0 8rem 0 0 $color-second inset, 0 -8rem 0 0 $color-second  inset;
+    }
+  }
+
+  &-hover {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 140%;
+      height: 102%;
+      top: 0;
+      left: -13%;
+      background: $color-pri;
+      transition: transform 0.6s 0.1s;
+      z-index: 0;
+      transform: skew(30deg) scaleX(0);
+      transform-origin: right;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 140%;
+      height: 102%;
+      top: 0;
+      left: -13%;
+      background: #72c3d5;
+      transition: transform 0.6s;
+      z-index: -1;
+      transform: skew(30deg) scaleX(0);
+      transform-origin: right;
+    }
+
+    @media (min-width: 1200px) {
+      &:hover {
+        &::before {
+          transform: skew(30deg) scaleX(1);
+          transform-origin: left;
+        }
+
+        &::after {
+          transform: skew(30deg) scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+
+  &.t-white {
+    .btn-inner {
+      color: white;
+
+      .text {
+        color: white;
+      }
+    }
+  }
+
+  &.t-pri {
+    .btn-inner {
+      color: $color-pri;
+
+      .text {
+        color: $color-pri;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      &:hover {
+        .btn-inner {
+          color: white;
+
+          .text {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  &.fw {
+    width: 100%;
+  }
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-second {
+    background: transparent;
+    border: 2px solid white;
+
+    .btn-inner {
+      color: white;
+    }
+
+    @media (min-width: 1201px) {
+      &:hover {
+        color: white;
+        box-shadow: 16rem 0 0 0 $color-pri inset, -16rem 0 0 0 $color-pri inset;
+        // box-shadow: 0 8rem 0 0 $color-second inset, 0 -8rem 0 0 $color-second  inset;
+      }
+    }
+  }
+}
+
+.box1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  .btn.btn-second {
+    box-shadow: 16rem 0 0 0 #ee7601 inset, -16rem 0 0 0 #ee7601 inset;
+  }
+  .box1-left {
+    width: 529px;
+    height: 573px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3.8rem;
+      right: -5.9rem;
+      background: #ee7601;
+      height: 2px;
+      z-index: -1;
+      width: 130px;
+      @include max(991px) {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(3.9rem - 5px);
+      right: calc(-5.9rem - 5px);
+      background: #ee7601;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      @include max(991px) {
+        display: none;
+      }
+    }
+
+    @include max(991px) {
+      width: 370px;
+      height: 391px;
+    }
+  }
+
+  .box1-right {
+    .box1-right_title {
+      margin-bottom: 3.2rem;
+    }
+    .box-right_text {
+      margin-bottom: 4rem;
+    }
+  }
+}

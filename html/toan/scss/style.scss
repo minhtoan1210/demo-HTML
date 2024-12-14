@@ -1,0 +1,29 @@
+// Library
+@import url("../js/library/fontawesome/css/all.css");
+@import url("../js/library/themify-icons/themify-icons.css");
+
+// Core
+@import "./core/reset";
+@import "./core/variable";
+@import "./core/font";
+@import "./core/mixin";
+@import "./core/base";
+@import "./core/animation";
+@import "./core/global";
+
+// Component
+@import "./components/backtotop";
+@import "./components/smenu";
+@import "./components/component";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/burger";
+@import "./components/button";
+@import "./components/homepage";
+// Layout
+@import "./layouts/banner";
+
+// Pages
+@import "./pages/news";
+
+
