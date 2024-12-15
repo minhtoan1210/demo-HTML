@@ -181,6 +181,11 @@
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
+
+  @include max(991px) {
+   grid-column-gap: 2.2rem;
+  }
+
   .btn.btn-second {
     box-shadow: 16rem 0 0 0 #ee7601 inset, -16rem 0 0 0 #ee7601 inset;
   }
