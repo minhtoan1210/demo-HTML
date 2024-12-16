@@ -4,27 +4,35 @@
   height: 100%;
 }
 
-@mixin customDashTitle($top-before, $left-before, $top-after, $left-after) {
+@mixin customDashTitle() {
   &::before {
     content: "";
     position: absolute;
-    top: $top-before;
-    left: $left-before;
-    background: $color-pri;
+    top: 11.8rem;
+    left: -12rem;
+    background: #ee7601;
     height: 2px;
     z-index: -1;
-    width: 65px;
+    width: 115px;
+
+    @include max(991px) {
+      display: none;
+    }
   }
 
   &::after {
     content: "";
     position: absolute;
-    top: $top-after;
-    left: $left-after;
-    background: $color-pri;
+    top: calc(11.9rem - 5px);
+    left: calc(0.1rem - 12px);
+    background: #ee7601;
     height: 10px;
     width: 10px;
     border-radius: 50%;
+
+    @include max(991px) {
+      display: none;
+    }
   }
 }
 
@@ -91,8 +99,12 @@
         @include full-size;
         padding: 5rem 3rem;
 
+        @media (min-width: 768px) and (max-width: 991px) {
+          padding: 1rem 0.8rem;
+        }
+        
         @include max($breakpoint-sm) {
-          display: none;
+          padding: 5rem 3rem;
         }
       }
 
@@ -103,16 +115,40 @@
         margin: 10px 0;
       }
 
-      .text-2 {
+      .learnmore {
         @extend .text-1
       }
 
-      .text-2 {
+      .learnmore {
         display: flex;
         align-items: center;
 
         .icon {
           padding-left: 2rem;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: calc(5rem + 10px);
+          left: calc(2.2rem + 10px);
+          width: 20rem;
+          height: 3px;
+          background-color: #fff;
+
+          @media (min-width: 766px) and (max-width: 991px) {
+            bottom: calc(0rem + 10px);
+            left: calc(0rem + 10px);
+          }
+        }
+
+        .link-icon {
+          img {
+            position: sticky;
+            width: 3rem;
+            height: 2rem;
+            padding-left: 1rem;
+          }
         }
       }
 
@@ -142,7 +178,7 @@
     padding-top: 10rem;
     position: relative;
 
-    @include customDashTitle(11.5rem, -32rem, calc(-5px + 11.6rem), calc(-5px - 25.6rem));
+    @include customDashTitle();
 
     @include max($breakpoint-lg) {
       padding: 4rem 0.8rem 0 0.8rem;
@@ -305,16 +341,13 @@
     @include max($breakpoint-md) {
       font-size: 2.2rem;
       line-height: 4.7rem;
+      width: 75%;
     }
 
     @include max($breakpoint-sm) {
-      font-size: 2.3rem;
-      line-height: 5rem;
-    }
-
-    @include max($breakpoint-xs) {
-      font-size: 1.7rem;
-      line-height: 4rem;
+      font-size: 3.2vw;
+      line-height: 4.5vw;
+      width: 75%;
     }
 
     .signature {
@@ -335,6 +368,10 @@
         font-size: 1.5rem;
         padding-top: 0px;
       }
+
+      @include max($breakpoint-sm) {
+        font-size: 3vw;
+      }
     }
   }
 }
@@ -342,10 +379,10 @@
 
 
 .case-studies {
-  padding: 10rem 0 0 0;
+  padding: 10rem 1.5rem 0 1.5rem;
   position: relative;
 
-  @include customDashTitle(11.5rem, -32rem, calc(-5px + 11.6rem), calc(-5px - 25.6rem));
+  @include customDashTitle();
 
   .title-left {
     font-weight: 500;
