@@ -9,7 +9,7 @@
     content: "";
     position: absolute;
     top: 11.8rem;
-    left: -12rem;
+    left: -31.5rem;
     background: #ee7601;
     height: 2px;
     z-index: -1;
@@ -24,7 +24,7 @@
     content: "";
     position: absolute;
     top: calc(11.9rem - 5px);
-    left: calc(0.1rem - 12px);
+    left: calc(-19rem - 12px);
     background: #ee7601;
     height: 10px;
     width: 10px;
@@ -277,6 +277,10 @@
     @include max($breakpoint-sm) {
       width: 100%;
     }
+  }
+
+  .detail-title {
+    width: 1vw;
   }
 }
 

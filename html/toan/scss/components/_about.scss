@@ -38,7 +38,7 @@
             }
 
             @include max($breakpoint-md) {
-                font-size: 25px;
+                font-size: 4rem;
             }
 
             @include max($breakpoint-sm) {
@@ -179,7 +179,7 @@
         padding-bottom: 4rem;
 
         @include max($breakpoint-lg) {
-            font-size: 30px;
+            font-size: 4rem;
             padding-bottom: 1rem;
         }
 
@@ -238,7 +238,7 @@
             padding: 1rem;
         }
 
-        @include max($breakpoint-xs) {
+        @include max($breakpoint-sm) {
             width: calc(100% / 2);
             padding: 1rem;
         }
@@ -284,12 +284,12 @@
                     color: $color-second;
                     padding-bottom: 0.5rem;
 
-                    @media (min-width: 768px) and (max-width:1199px) {
-                        font-size: 15px;
-                    }
-
                     @include max($breakpoint-lg) {
                         font-size: 22px;
+                    }
+
+                    @include max($breakpoint-md) {
+                        font-size: 18px;
                     }
                 }
 
